@@ -13,8 +13,10 @@ public interface BookService {
     Optional<Book> findById(Long id);
     Optional<Book> findByTitle(String title);
     List<Book> findAllByCategory(Category c);
-    Optional<Book> create(String title, int numberOfPages, LocalDateTime dateOfIssue, int numberOfSamples, String imageURL, float price, Category category);
-    Optional<Book> edit(Long id, String title, int numberOfPages, LocalDateTime dateOfIssue, int numberOfSamples, String imageURL, float price, Category category);
+    Optional<Book> create(String title, int numberOfPages, LocalDateTime dateOfIssue, int numberOfSamples, String imageURL, float price, Long categoryId, List<Long> authorsId);
+    Optional<Book> edit(Long id, String title, int numberOfPages, LocalDateTime dateOfIssue, int numberOfSamples, String imageURL, float price,  Long categoryId, List<Long> authorsId);
     Book deleteById(Long id);
+    int sellBooks(Long id, int howMuch);
+    int addBooks(Long id, int howMuch);
 
 }

@@ -34,7 +34,7 @@ public class Book {
 
     }
 
-    public Book(String title, int numberOfPages, LocalDateTime dateOfIssue, int numberOfSamples, String imageURL, float price, Category category){
+    public Book(String title, int numberOfPages, LocalDateTime dateOfIssue, int numberOfSamples, String imageURL, float price, Category category, List<Author> authors){
 
         this.title = title;
         this.numberOfPages = numberOfPages;
@@ -43,7 +43,7 @@ public class Book {
         this.imageURL = imageURL;
         this.price = price;
         this.category = category;
-        authors = new ArrayList<>();
+        this.authors = authors;
 
     }
 

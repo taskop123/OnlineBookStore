@@ -1,5 +1,6 @@
 package com.finkiwpproject.onlinebookstore.model;
 
+import com.finkiwpproject.onlinebookstore.model.enumerations.Gender;
 import com.finkiwpproject.onlinebookstore.model.enumerations.Role;
 import lombok.Data;
 
@@ -21,6 +22,10 @@ public class User {
 
     private String address;
 
+    private int age;
+    @Enumerated(value = EnumType.STRING)
+    private Gender gender;
+
     private String email;
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<PhoneNumber> phoneNumbers;
@@ -33,7 +38,7 @@ public class User {
 
     }
 
-    public User(String username, String password, String name, String surname, String address, String email, Role role){
+    public User(String username, String password, String name, String surname, String address, String email, Role role, int age, Gender gender){
 
         this.username = username;
         this.password = password;
@@ -42,6 +47,8 @@ public class User {
         this.address = address;
         this.email = email;
         this.role = role;
+        this.age = age;
+        this.gender = gender;
 
         phoneNumbers = new ArrayList<>();
         carts = new ArrayList<>();
