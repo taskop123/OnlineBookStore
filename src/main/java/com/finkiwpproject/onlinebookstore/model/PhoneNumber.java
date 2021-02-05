@@ -2,14 +2,15 @@ package com.finkiwpproject.onlinebookstore.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Data
 @Entity
 public class PhoneNumber {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String phoneNumber;
     @ManyToOne
     private User user;
